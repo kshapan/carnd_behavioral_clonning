@@ -91,7 +91,7 @@ Here is a visualization of the architecture.
 
 Training data was chosen to keep the vehicle driving on the road. I used a combination of center lane driving, recovering from the left and right sides of the road.
 
-I find using simulator to gather training data bit difficult as probaby I am not good at video games or just a bad driver, hence I have used sample data provided to train my model. However I observe that, there were a few spots where the vehicle fell off the track, for which I recorded recovery path data. Hence the final combination of training and validaiton data is center lane driving, recovering from the left and right sides of the road.
+I find using simulator to gather training data bit difficult as probaby I am not good at video games but I tried my best to get the training data which includes center driving laps, center driving lap in opposite direction and recovery paths. However I observe that, there were a few spots where the vehicle fell off the track, for which I recorded recovery path data for those particular portions. Hence the final combination of training and validation data is center lane driving, recovering from the left and right sides of the road.
 
 These images show what a recovery looks :
 
