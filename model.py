@@ -80,7 +80,7 @@ train_generator = generator(train_samples, batch_size=batch_size)
 validation_generator = generator(validation_samples, batch_size=batch_size)            
 
 from keras.models import Sequential 
-from keras.layers import Flatten, Dense, Lambda, Cropping2D
+from keras.layers import Flatten, Dense, Lambda, Cropping2D, Dropout
 from keras.layers.convolutional import Conv2D
 from keras.layers.pooling import MaxPooling2D
 
@@ -93,6 +93,7 @@ model.add(Conv2D(48, kernel_size=(5, 5), strides=(2,2), activation='relu'))
 model.add(Conv2D(64, kernel_size=(3, 3), activation='relu'))
 model.add(Conv2D(64, kernel_size=(3, 3), activation='relu'))
 model.add(Flatten())
+model.add(Dropout(0.2))
 model.add(Dense(100))
 model.add(Dense(50))
 model.add(Dense(10))
