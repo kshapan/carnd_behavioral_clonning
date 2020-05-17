@@ -53,7 +53,7 @@ This architecture has normalizing layer fallowed by 5 convolutional layer fallow
 
 #### 2. Attempts to reduce overfitting in the model
 
-In order to reduce overfitting, I reduced the number of epochs to 3 as I observed after 3 epochs the validation loss was increasing which might be because of overfitting. I tried introducing dropout in the model but didnt see any improvement on the validation loss, even observed little increase in validation loss. Hence I decided to remove dropout layer from the model.    
+In order to reduce overfitting, I reduced the number of epochs to 10 as I observed after 10 epochs the validation loss was increasing which might be because of overfitting. Also I dropout of 0.2(20%) in the model provided good improvement on validation loss.     
 
 The model was trained and validated on different data sets to ensure that the model was not overfitting. The model was tested by running it through the simulator and ensuring that the vehicle could stay on the track.
 
@@ -72,7 +72,7 @@ For details about how I created the training data, see the next section
 
 I have tried using LeNet's architecture first but the the result with NVIDIA's self driveing car model were far better. Hence I chose NVIDIA's self driving car architecture provided in the lessons.
 
-In order to gauge how well the model was working, I split my image and steering angle data into a training and validation set. I found that my first model had a low mean squared error on the training set but a high mean squared error on the validation set as the epochs increased. This implied that the model was overfitting. Hence I limited the number of epochs to 3. It provded good results on training the model.
+In order to gauge how well the model was working, I split my image and steering angle data into a training and validation set. I found that my first model had a low mean squared error on the training set but a high mean squared error on the validation set as the epochs increased. This implied that the model was overfitting. Hence I added the dropout layer and limited the number of epochs to 10. It provded good results on training the model.
 
 
 The final step was to run the simulator to see how well the car was driving around track one. There were a few spots where the vehicle fell off the track, to improve the driving behavior in these cases, I took recorded recovery path from left and right sides of the road. After feeding the recovery data along with centre driving data, the model was observed to perform well.
@@ -102,7 +102,7 @@ After collecting data, I then preprocessed this data by using lambda function to
 
 I finally randomly shuffled the data set and put 20% of the data into a validation set.
 
-I used this training data for training the model. The validation set helped determine if the model was over or under fitting. The ideal number of epochs was 3 as evidenced by training process. I used an adam optimizer so that manually training the learning rate wasn't necessary.
+I used this training data for training the model. The validation set helped determine if the model was over or under fitting. The ideal number of epochs was 10 as evidenced by training process. I used an adam optimizer so that manually training the learning rate wasn't necessary.
 
 #### 8. Final result of the Model 
 
